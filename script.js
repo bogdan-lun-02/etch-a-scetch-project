@@ -1,4 +1,4 @@
-for (let i = 0; i < 16; i++) {
+for (let i = 0; i < 256; i++) {
   document.querySelector('#container').appendChild(document.createElement('div'))
 }
 
