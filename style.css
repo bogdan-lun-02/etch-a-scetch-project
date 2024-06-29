@@ -4,14 +4,19 @@
 
 #container {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 
+.column {
+  display: flex;
+}
+
 .square {
-  flex: 0 0 0.82%;
-  height: 70px;
+  flex: 0 0 40px;
+  height: 40px;
   background-color: blue;
-  margin: 5px;
+  margin: 2px;
 }
 
 /* -0.75 - попробовать */
