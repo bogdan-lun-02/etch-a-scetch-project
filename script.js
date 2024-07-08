@@ -1,32 +1,10 @@
-// цикл создает указанное количество div в container
-
-// for (let i = 0; i < 4096; i++) {
-//   document.querySelector('#container').appendChild(document.createElement('div'))
-// }
-
-// добавляет класс ко всем созданным div
-
-const squares = document.querySelectorAll('#container > div');
-for (let square of squares) {
-  square.classList.add('square');
-}
-
-
-// меняет цвет дива при наведении
-
-squares.forEach((square) => {
-  square.addEventListener('mouseover', () => {
-    square.style.background = 'red';
-  })
-})
-
 // кнопка с прикрепленными событиями
 
 const button = document.querySelector('button');
+button.addEventListener('click', removeGrid);
 button.addEventListener('click', constructGrid);
 
-
-// функция спрашивает размер решетки
+// функция спрашивает размер решетки и создает ее
 
 function constructGrid() {
 
@@ -47,11 +25,29 @@ function constructGrid() {
           column.appendChild(document.createElement('div')).
           classList.add('square');
         }
+
+        let squares = document.querySelectorAll('.square');
+        squares.forEach((square) => {
+          square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = 'red'
+          })
+        })
           
         })
 
   
 }
+
+// функция внизу убирает созданные клетки
+
+function removeGrid() {
+
+  let container = document.querySelector('#container');
+  container.innerHTML = '';
+}
+
+
+
 
 
   
